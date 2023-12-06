@@ -1,7 +1,7 @@
 require 'json'
 
 # Read the transcript file
-transcript_file = 'transcripts.txt'
+transcript_file = 'data/cleaned_transcripts/cleaned_roll_for_persuasion_interview_transcript.txt'
 transcript_data = File.read(transcript_file)
 
 # Initialize variables to store structured data
@@ -38,7 +38,7 @@ end
 json_data = JSON.pretty_generate(structured_data)
 
 # Save the JSON data to a file
-output_file = 'transcript.json'
+output_file = 'data/processed_transcripts/cleaned_roll_for_persuasion_interview_transcript.json'
 File.write(output_file, json_data)
 
 puts "Transcript data has been processed and saved to #{output_file}."
