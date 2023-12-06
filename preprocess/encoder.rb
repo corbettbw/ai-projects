@@ -4,9 +4,9 @@ require 'json'
 
 # Load the vocabulary and mappings
 def load_vocabulary
-  vocabulary = JSON.parse(File.read('transcripts/vocabulary.json'))
-  word_to_index = JSON.parse(File.read('transcripts/word_to_index.json'))
-  index_to_word = JSON.parse(File.read('transcripts/index_to_word.json'))
+  vocabulary = JSON.parse(File.read('data/vocabulary.json'))
+  word_to_index = JSON.parse(File.read('data/word_to_index.json'))
+  index_to_word = JSON.parse(File.read('data/index_to_word.json'))
   return vocabulary, word_to_index, index_to_word
 end
 

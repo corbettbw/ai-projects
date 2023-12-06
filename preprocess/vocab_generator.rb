@@ -1,7 +1,7 @@
 require 'json'
 
 # Load the preprocessed Brennan transcript in JSON format
-brennan_transcript = JSON.parse(File.read('transcripts/brennan_transcript.json'))
+brennan_transcript = JSON.parse(File.read('data/nlp_preprocessed_transcripts/stemmed_brennan_transcript.json'))
 
 # Create a vocabulary from the transcript data
 vocabulary = brennan_transcript.join(' ').split.uniq.sort
@@ -16,8 +16,8 @@ vocabulary.each_with_index do |word, index|
 end
 
 # Save the vocabulary and mappings to files for future use
-File.write('transcripts/vocabulary.json', JSON.pretty_generate(vocabulary))
-File.write('transcripts/word_to_index.json', JSON.pretty_generate(word_to_index))
-File.write('transcripts/index_to_word.json', JSON.pretty_generate(index_to_word))
+File.write('data/vocabulary/vocabulary.json', JSON.pretty_generate(vocabulary))
+File.write('data/vocabulary/word_to_index.json', JSON.pretty_generate(word_to_index))
+File.write('data/vocabulary/index_to_word.json', JSON.pretty_generate(index_to_word))
 
 puts 'Vocabulary building completed.'
